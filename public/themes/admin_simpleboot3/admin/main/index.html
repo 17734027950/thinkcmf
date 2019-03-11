@@ -1,4 +1,7 @@
-<php>function _get_system_widget($name){</php>
+<php>
+    if (!function_exists('_get_system_widget')) {
+        function _get_system_widget($name){
+</php>
 <switch name="name">
     <case value="CmfHub">
         <div class="panel panel-default">
@@ -106,7 +109,10 @@
         </div>
     </case>
 </switch>
-<php>}</php>
+<php>
+        }
+    }
+</php>
 
 <include file="public@header"/>
 <style>
@@ -212,7 +218,7 @@
 <script src="__STATIC__/js/admin.js"></script>
 <php>
     $lang_set=defined('LANG_SET')?LANG_SET:'';
-    $thinkcmf_version=defined('THINKCMF_VERSION')?THINKCMF_VERSION:'';
+    $thinkcmf_version=cmf_version();
 </php>
 <script>
 
